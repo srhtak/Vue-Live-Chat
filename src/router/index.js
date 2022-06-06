@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Welcome from "../views/Welcome.vue";
-import Register from "../views/Register.vue";
-import Login from "../views/Login.vue";
+import ChatRoom from "../views/ChatRoom.vue";
+import Auth from "../views/Auth.vue";
 
 const routes = [
   {
@@ -10,14 +10,14 @@ const routes = [
     component: Welcome,
   },
   {
-    path: "/register",
-    name: "Register",
-    component: Register,
+    path: "/chatroom",
+    name: "ChatRoom",
+    component: ChatRoom,
   },
   {
-    path: "/login",
-    name: "Login",
-    component: Login,
+    path: "/auth",
+    name: "Auth",
+    component: Auth,
   },
 ];
 

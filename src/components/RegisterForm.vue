@@ -1,10 +1,30 @@
 <script setup>
+import { ref,defineEmits } from "vue";
+import useSignUp from "@/composables/useSignUp";
+import Spinner from "./Spinner.vue";
+//refs
+const fullname = ref("");
 const email = ref("");
 const password = ref("");
+const btn = ref(true)
+const emit = defineEmits(["goLogin","signUp"]);
 
-const handleSubmit = () => {
-  console.log(email.value, password.value);
+const { error, signUp } = useSignUp();
+
+const handleSubmit = async () => {
+    btn.value = false
+  await signUp(email.value, password.value, fullname.value);
+  if (!error.value) {
+    emit('signUp')    
+  } else {
+      btn.value = true
+  }
+  
 };
+
+const goLogin = () => {
+emit("goLogin", true);
+}
 </script>
 
 <template>
@@ -15,10 +35,25 @@ const handleSubmit = () => {
       </h1>
 
       <form
-        action=""
+        @submit.prevent="handleSubmit"
         class="p-8 backdrop-blur backdrop-filter bg-black/10 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl"
       >
-        <p class="text-lg font-medium text-white">Sign in to your account</p>
+        <p class="text-lg font-medium text-white">Sign up to your account</p>
+        <div>
+          <label for="email" class="text-sm text-white font-medium"
+            >Fullname</label
+          >
+
+          <div class="relative mt-1">
+            <input
+              type="text"
+              id="fullname"
+              v-model="fullname"
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Serhat"
+            />
+          </div>
+        </div>
 
         <div>
           <label for="email" class="text-sm text-white font-medium"
@@ -51,18 +86,26 @@ const handleSubmit = () => {
             />
           </div>
         </div>
-
+        
         <button
+        v-if="btn"
           type="submit"
           class="block w-full px-5 py-3 text-xl font-medium text-white bg-indigo-600 rounded-lg"
         >
-          Sign In
+          Sign Up
         </button>
+         <div v-else>
+           <Spinner/>
+       </div>
+       <div v-if="error">
+          <h3 class="text-red-900 text-md font-semibold">{{ error }}</h3>
+        </div>
+
 
         <p class="text-sm text-center text-white">
-          No account?
-          <router-link class="underline" :to="{ name: 'Register' }"
-            >Sign Up</router-link
+          Already registered?
+          <p class="underline cursor-pointer inline" @click="goLogin"
+            >Sign In</p
           >
         </p>
       </form>

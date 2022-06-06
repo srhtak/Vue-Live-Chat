@@ -35,16 +35,9 @@
       >
         <router-link
           class="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring"
-          :to="{ name: 'Login' }"
+          :to="{ name: 'Auth' }"
         >
-          Sign In
-        </router-link>
-
-        <router-link
-          class="block w-full px-12 py-3 text-sm font-medium text-white border border-blue-600 rounded sm:w-auto hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring"
-          :to="{ name: 'Register' }"
-        >
-          Sing Up
+          Learn More >
         </router-link>
       </div>
     </div>
