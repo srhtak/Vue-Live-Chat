@@ -5,6 +5,5 @@
 <style lang="scss">
 html {
   background-image: url(../src/assets/bg.jpg);
-  overflow: hidden;
 }
 </style>

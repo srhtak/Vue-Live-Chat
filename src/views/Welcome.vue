@@ -1,5 +1,11 @@
 <script setup>
 import Banner from "@/components/Banner.vue";
+import AOS from "aos";
+import { onMounted } from "vue";
+
+onMounted(() => {
+  AOS.init();
+});
 </script>
 
 <template>
