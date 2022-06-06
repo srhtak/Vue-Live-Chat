@@ -1,10 +1,28 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import useLogout from "../composables/useLogout";
+import getUser from "../composables/getUser";
+
 const isMenuOpen = ref(false);
+const router = useRouter();
+
+const { logout, error } = useLogout();
+const { user } = getUser();
+
+const handleLogout = async () => {
+  await logout();
+  if (!error.value) {
+    router.push({ name: "Welcome" });
+  }
+};
 </script>
 
 <template>
-  <div class="backdrop-blur backdrop-filter bg-black/20 m-4 rounded-2xl">
+  <div
+    v-if="user"
+    class="backdrop-blur backdrop-filter bg-black/20 m-4 rounded-2xl"
+  >
     <div
       class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
     >
@@ -15,74 +33,29 @@ const isMenuOpen = ref(false);
           title="Company"
           class="inline-flex items-center"
         >
-          <svg
-            class="w-8 text-purple-400"
-            viewBox="0 0 24 24"
-            stroke-linejoin="round"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-miterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12"></rect>
-            <rect x="3" y="17" width="7" height="6"></rect>
-            <rect x="14" y="1" width="7" height="6"></rect>
-            <rect x="14" y="11" width="7" height="12"></rect>
-          </svg>
           <span
-            class="ml-2 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+            class="ml-2 text-xl font-bold tracking-wide uppercase text-white"
             >VueChat.</span
           >
         </a>
+        <div class="flex items-center hidden space-x-8 lg:flex">
+          <h1
+            class="font-medium tracking-wide text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+          >
+            Welcome {{ user.displayName }}
+          </h1>
+          <div class="inline text-3xl">🤩</div>
+        </div>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
-              aria-label="Our product"
-              title="Our product"
-              class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >Product</a
-            >
-          </li>
-          <li>
-            <a
-              href="/"
-              aria-label="Our product"
-              title="Our product"
-              class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >Features</a
-            >
-          </li>
-          <li>
-            <a
-              href="/"
-              aria-label="Product pricing"
-              title="Product pricing"
-              class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a
-              href="/"
-              aria-label="About us"
-              title="About us"
-              class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >About us</a
-            >
-          </li>
-        </ul>
-        <ul class="flex items-center hidden space-x-8 lg:flex">
-          <li>
-            <a
-              href="/"
-              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+            <button
+              @click="handleLogout"
+              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition bg-black/20 duration-200 rounded shadow-md hover:bg-black/10 focus:shadow-outline focus:outline-none"
               aria-label="Sign up"
               title="Sign up"
             >
-              Sign up
-            </a>
+              LogOut
+            </button>
           </li>
         </ul>
         <div class="lg:hidden">
