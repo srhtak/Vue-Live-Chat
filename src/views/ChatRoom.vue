@@ -1,12 +1,20 @@
 <script setup>
-import Navbar from "@/components/Navbar.vue";
+import { useRouter } from "vue-router";
+import getUser from "../composables/getUser";
+import Navbar from "../components/Navbar.vue";
+import { watch, watchEffect } from "vue";
+const router = useRouter();
+const { user } = getUser();
+
+watchEffect(() => {
+  if (!user.value) {
+    router.push({ name: "Welcome" });
+  }
+});
 </script>
 
 <template>
   <Navbar />
-  <div>
-    <h1>Chat Room</h1>
-  </div>
 </template>
 
 <style lang="scss" scoped></style>

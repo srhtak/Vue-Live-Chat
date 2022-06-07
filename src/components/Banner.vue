@@ -44,8 +44,6 @@
   </section>
 </template>
 
-<script setup>
-import { ref } from "vue";
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>

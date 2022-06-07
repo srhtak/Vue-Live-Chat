@@ -6,15 +6,15 @@ import { projectAuth } from "@/firebase/config";
 
 // auth guard
 
-const requireAuth = (to, from, next) => {
-  let user = projectAuth.currentUser;
-
-  if (!user) {
-    next({ name: "Welcome" });
-  } else {
-    next();
-  }
-};
+// const requireAuth = (to, from, next) => {
+//   let user = projectAuth.currentUser;
+//   console.log(user);
+//   if (!user) {
+//     next({ name: "Welcome" });
+//   } else {
+//     next();
+//   }
+// };
 
 const routes = [
   {
@@ -26,7 +26,7 @@ const routes = [
     path: "/chatroom",
     name: "ChatRoom",
     component: ChatRoom,
-    beforeEnter: requireAuth,
+    // beforeEnter: requireAuth,
   },
   {
     path: "/auth",
