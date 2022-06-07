@@ -42,19 +42,18 @@ const handleLogout = async () => {
           <h1
             class="font-medium tracking-wide text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
           >
-            Welcome {{ user.displayName }}
+            Welcome {{ user.displayName }} <span class="text-white">🤩</span>
           </h1>
-          <div class="inline text-3xl">🤩</div>
         </div>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
             <button
               @click="handleLogout"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition bg-black/20 duration-200 rounded shadow-md hover:bg-black/10 focus:shadow-outline focus:outline-none"
-              aria-label="Sign up"
-              title="Sign up"
+              aria-label="Log out"
+              title="Log out"
             >
-              LogOut
+              Log Out
             </button>
           </li>
         </ul>
