@@ -13,7 +13,6 @@ const getCollection = (collection) => {
     (snap) => {
       let result = [];
       snap.docs.forEach((doc) => {
-        console.log(doc.data());
         doc.data().createdAt && result.push({ ...doc.data(), id: doc.id });
       });
       documents.value = result;
