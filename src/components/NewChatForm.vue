@@ -23,16 +23,16 @@ const handleSubmit = async () => {
 
 <template>
   <form>
-    <textarea
-      class="text-blue-500"
-      @keypress.enter="handleSubmit"
-      v-model="message"
-      name="message"
-      id=""
-      cols="30"
-      rows="10"
-    >
-    </textarea>
+    <div>
+      <div class="w-full max-w-sm mx-auto">
+        <textarea
+          @keypress.enter="handleSubmit"
+          v-model="message"
+          class="h-24 w-full border rounded-xl overflow-hidden resize-none focus:border-blue-500 ring-1 ring-transparent focus:ring-blue-500 focus:outline-none text-black p-2 transition ease-in-out duration-300"
+          placeholder="Type a message and hit enter to send"
+        ></textarea>
+      </div>
+    </div>
   </form>
   <div class="text-red-500">{{ error }}</div>
 </template>

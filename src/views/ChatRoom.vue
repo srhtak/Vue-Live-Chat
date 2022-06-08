@@ -17,8 +17,10 @@ watchEffect(() => {
 
 <template>
   <Navbar />
-  <ChatWindow />
-  <NewChatForm />
+  <div class="flex flex-col w-full h-screen">
+    <ChatWindow />
+    <NewChatForm />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
