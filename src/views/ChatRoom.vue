@@ -3,7 +3,7 @@ import { useRouter } from "vue-router";
 import getUser from "../composables/getUser";
 import Navbar from "../components/Navbar.vue";
 import { watchEffect } from "vue";
-import NewChatFrom from "../components/NewChatFrom.vue";
+import NewChatForm from "../components/NewChatForm.vue";
 const router = useRouter();
 const { user } = getUser();
 
@@ -16,7 +16,7 @@ watchEffect(() => {
 
 <template>
   <Navbar />
-  <NewChatFrom />
+  <NewChatForm />
 </template>
 
 <style lang="scss" scoped></style>
