@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { projectFirestore } from "@/firebase/config";
 
-const getCollection = async (collection) => {
+const getCollection = (collection) => {
   const error = ref(null);
   const documents = ref(null);
 
@@ -10,9 +10,10 @@ const getCollection = async (collection) => {
     .orderBy("createdAt");
 
   collectionRef.onSnapshot(
-    () => {
+    (snap) => {
       let result = [];
       snap.docs.forEach((doc) => {
+        console.log(doc.data());
         doc.data().createdAt && result.push({ ...doc.data(), id: doc.id });
       });
       documents.value = result;

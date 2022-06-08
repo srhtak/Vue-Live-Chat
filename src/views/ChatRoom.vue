@@ -4,6 +4,7 @@ import getUser from "../composables/getUser";
 import Navbar from "../components/Navbar.vue";
 import { watchEffect } from "vue";
 import NewChatForm from "../components/NewChatForm.vue";
+import ChatWindow from "../components/ChatWindow.vue";
 const router = useRouter();
 const { user } = getUser();
 
@@ -16,6 +17,7 @@ watchEffect(() => {
 
 <template>
   <Navbar />
+  <ChatWindow />
   <NewChatForm />
 </template>
 
