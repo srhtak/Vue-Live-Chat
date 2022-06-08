@@ -2,9 +2,20 @@
 import Banner from "@/components/Banner.vue";
 import AOS from "aos";
 import { onMounted } from "vue";
-
+import { useRouter } from "vue-router";
+import getUser from "../composables/getUser";
+import { watchEffect } from "vue";
 onMounted(() => {
   AOS.init();
+});
+
+const router = useRouter();
+const { user } = getUser();
+
+watchEffect(() => {
+  if (user.value) {
+    router.push({ name: "ChatRoom" });
+  }
 });
 </script>
 

@@ -3,7 +3,6 @@ import { ref } from "vue";
 
 const useCollection = (collection) => {
   const error = ref(null);
-  console.log(collection);
   const addDoc = async (doc) => {
     const error = null;
     console.log(doc);

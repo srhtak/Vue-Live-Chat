@@ -18,7 +18,6 @@ const messages = ref(null);
 
 onUpdated(() => {
   messages.value.scrollTop = messages.value.scrollHeight;
-  console.log(messages.value.scrollHeight);
 });
 </script>
 

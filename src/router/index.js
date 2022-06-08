@@ -16,11 +16,21 @@ import { projectAuth } from "@/firebase/config";
 //   }
 // };
 
+// const noRequireAuth = (to, from, next) => {
+//   let user = projectAuth.currentUser;
+//   if (user) {
+//     next({ name: "ChatRoom" });
+//   } else {
+//     next();
+//   }
+// };
+
 const routes = [
   {
     path: "/",
     name: "Welcome",
     component: Welcome,
+    // beforeEnter: noRequireAuth,
   },
   {
     path: "/chatroom",
