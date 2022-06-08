@@ -17,7 +17,7 @@ watchEffect(() => {
 
 <template>
   <Navbar />
-  <div class="flex flex-col w-full h-screen">
+  <div class="flex flex-col w-full">
     <ChatWindow />
     <NewChatForm />
   </div>

@@ -18,16 +18,30 @@ const formattedDocuments = computed(() => {
   <div>
     <div v-if="error">{{ error }}</div>
   </div>
-  <div
-    class="w-5/6 bg-red-200 h-2/3 overflow-y-scroll overflow-x-hidden p-6"
-    v-auto-animate
-  >
-    <div v-for="doc in formattedDocuments" :key="doc.id">
-      <h1 class="text-xl">{{ doc.name }}</h1>
-      <h2 class="font-semibold">{{ doc.message }}</h2>
-      <h2 class="text-blue-400">{{ doc.createdAt }} ago</h2>
+  <div class="flex justify-center items-center">
+    <div
+      class="w-4/5 backdrop-blur backdrop-filter rounded-md shadow-lg bg-black/20 height overflow-y-scroll overflow-x-hidden p-6"
+      v-auto-animate
+    >
+      <div v-for="doc in formattedDocuments" :key="doc.id">
+        <div class="flex">
+          <h1
+            class="text-2xl font-bold mr-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+          >
+            {{ doc.name }}:
+          </h1>
+          <h2 class="font-semibold mt-1 text-white">
+            {{ doc.message }}
+          </h2>
+        </div>
+        <h2 class="text-sm text-white">{{ doc.createdAt }} ago</h2>
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.height {
+  height: 400px;
+}
+</style>

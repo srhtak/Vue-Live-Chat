@@ -24,7 +24,7 @@ const handleSubmit = async () => {
 <template>
   <form>
     <div>
-      <div class="w-full max-w-sm mx-auto">
+      <div class="w-full max-w-sm mx-auto mt-3">
         <textarea
           @keypress.enter="handleSubmit"
           v-model="message"
