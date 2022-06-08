@@ -1,10 +1,12 @@
 <script setup>
 import { timestamp } from "@/firebase/config";
 import getUser from "../composables/getUser";
+import useCollection from "../composables/useCollection";
 import { ref } from "vue";
 
 const message = ref("");
 const { user } = getUser();
+const { error, addDoc } = useCollection("messages");
 
 const handleSubmit = async () => {
   const chat = {
@@ -12,8 +14,10 @@ const handleSubmit = async () => {
     message: message.value,
     createdAt: timestamp(),
   };
-  console.log(chat);
-  message.value = "";
+  await addDoc(chat);
+  if (!error.value) {
+    message.value = "";
+  }
 };
 </script>
 
@@ -30,6 +34,7 @@ const handleSubmit = async () => {
     >
     </textarea>
   </form>
+  <div class="text-red-500">{{ error }}</div>
 </template>
 
 <style lang="scss" scoped></style>
