@@ -7,36 +7,23 @@
   <a href="https://vuejs.org/" title="Vue.js"><img src="https://github.com/get-icon/geticon/raw/master/icons/vue.svg" alt="Vue.js" width="96px" height="96px"></a>
   <a href="https://www.firebase.com/" title="Firebase"><img src="https://github.com/get-icon/geticon/raw/master/icons/firebase.svg" alt="Firebase" width="96px" height="96px"></a>
   <a href="https://tailwindcss.com/" title="Tailwind CSS"><img src="https://github.com/get-icon/geticon/raw/master/icons/tailwindcss-icon.svg" alt="Tailwind CSS" width="96px" height="96px"></a>
+  <a href="https://sass-lang.com/" title="Sass"><img src="https://github.com/get-icon/geticon/raw/master/icons/sass.svg" alt="Sass" width="96px" height="96px"></a>
 
 <h3 align="center">Vue Live Chat</h3>
 
   <p align="center">
-    Real-time chat application made with Vue.js, Firebase and Tailwind.
+    A quick project that tests how to use VueJS with Firebase to make a simple chat application.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/srhtak/vue-live-chat.git"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://vue-live-chat-87643.web.app/">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/srhtak/vue-live-chat.git/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/srhtak/vue-live-chat.git/issues">Request Feature</a>
   </p>
 </div>
-
-
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 ### Built With
