@@ -19,9 +19,9 @@
     <br />
     <a href="https://vue-live-chat-87643.web.app/">View Demo</a>
     ·
-    <a href="https://github.com/srhtak/vue-live-chat.git/issues">Report Bug</a>
+    <a href="https://github.com/srhtak/vue-live-chat/issues">Report Bug</a>
     ·
-    <a href="https://github.com/srhtak/vue-live-chat.git/issues">Request Feature</a>
+    <a href="https://github.com/srhtak/vue-live-chat/issues">Request Feature</a>
   </p>
 </div>
 
